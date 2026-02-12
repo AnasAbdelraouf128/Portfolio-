@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anas Abdelraouf | Cybersecurity Portfolio</title>
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 fill=%22%23000000%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%2300ff41%22 font-family=%22monospace%22 font-weight=%22bold%22 font-size=%2240%22>&gt;_</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -13,9 +15,9 @@
         :root {
             --bg-color: #000000;
             --primary-color: #00ff41; /* Neon Green */
-            --cyan-color: #00e5ff; /* Cyan for accents and email */
-            --text-grey: #a0a0a0; /* Grey for bios/text */
-            --card-bg: rgba(0, 0, 0, 0.6); /* Dark card background */
+            --cyan-color: #00e5ff; 
+            --text-grey: #a0a0a0; 
+            --card-bg: rgba(0, 0, 0, 0.6); 
             --card-border: #222222;
         }
 
@@ -79,7 +81,7 @@
             box-sizing: border-box;
         }
 
-        /* --- EXACT MATCH NAV LOGO --- */
+        /* --- NAV LOGO --- */
         .nav-logo {
             color: var(--primary-color); 
             font-family: 'Fira Code', monospace; 
@@ -162,7 +164,7 @@
             scroll-margin-top: 100px; 
         }
 
-        /* --- Hero Section Styling (Full Height) --- */
+        /* --- Hero Section Styling --- */
         #home {
             text-align: center;
             min-height: 100vh;
@@ -399,6 +401,7 @@
             text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
         }
 
+        /* --- FOOTER STYLING --- */
         footer {
             text-align: center;
             padding: 3rem 0;
@@ -407,6 +410,17 @@
             margin-top: 5rem;
             background-color: rgba(0,0,0,0.8);
             border-top: 1px solid var(--primary-color);
+        }
+
+        /* SMALL FOOTER ICON STYLE */
+        .footer-logo {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.2rem; /* Small size */
+            color: var(--primary-color);
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 8px; 
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
         }
     </style>
 </head>
@@ -434,7 +448,7 @@
             <img src="Profile_Photo.png" alt="Anas Abdelraouf" class="profile-photo">
 
             <h1 class="hero-name-linux">
-                <span class="linux-user">anas@kali</span><span class="linux-colon">:</span><span class="linux-dir">~</span><span class="linux-char">$</span><span class="linux-cmd">./Anas_Abdelraouf</span>
+                <span class="linux-user">anas@kali</span><span class="linux-colon">:</span><span class="linux-dir">~</span><span class="linux-char">$</span><span class="linux-cmd" id="typing-name"></span>
             </h1>
             
             <div class="subtitle">CYBERSECURITY INCIDENT RESPONSE ANALYST | BLUE TEAM LEAD</div>
@@ -461,8 +475,8 @@
             </div>
             
             <div class="content-card">
-                <p>Currently serving as <span class="highlight-green">Head of the Cybersecurity Blue Team</span> for the HackerRank Campus Community, I possess a strong foundation in <span class="highlight-green">network analysis</span>, <span class="highlight-green">threat detection</span>, and <span class="highlight-green">leadership</span>.</p>
-                <p style="margin-top: 1rem;">I am seeking to leverage my <span class="highlight-green">technical skills</span> and proactive mindset to contribute to a dynamic security team as an entry-level Cybersecurity Analyst.</p>
+                <p>I'm a <span class="highlight-green">Computer Science student</span> at the Faculty of Science with a strong passion for <span class="highlight-green">cybersecurity</span>. I enjoy exploring how systems work, how they break, and most importantly — <span class="highlight-green">how to protect them</span>.</p>
+                <p style="margin-top: 1rem;">Currently serving as <span class="highlight-green">Head of the Cybersecurity Blue Team</span> for the HackerRank Campus Community and an <span class="highlight-green">Incident Response Analyst Intern</span> at DEPI, I am seeking to leverage my technical skills and proactive mindset to contribute to a dynamic security team.</p>
             </div>
         </section>
 
@@ -489,32 +503,44 @@
             </div>
             
             <div class="content-card">
-                <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-                    <h3 class="card-title">Cyber Security Incident Response Analyst Intern</h3>
-                    <span style="color: var(--primary-color);">Dec. 2025 — Present</span>
+                <div style="display: flex; align-items: start; gap: 20px;">
+                    <img src="depi_group.jpg" alt="DEPI Team" style="width: 70px; height: 70px; border-radius: 10px; object-fit: cover; border: 1px solid var(--primary-color); flex-shrink: 0;">
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                            <h3 class="card-title" style="margin-bottom: 0;">Cyber Security Incident Response Analyst Intern</h3>
+                            <span style="color: var(--primary-color);">Dec. 2025 — Present</span>
+                        </div>
+                        <p class="card-subtitle">DEPI - Ministry of Communications and Information Technology</p>
+                        <ul style="padding-left: 1.5rem; color: var(--text-grey);">
+                            <li><span class="highlight-green">Technical Proficiency:</span> Acquired hands-on expertise in incident response management.</li>
+                            <li><span class="highlight-green">English Development:</span> Completed a specialized 6-week "English for Freelancing" module.</li>
+                            <li><span class="highlight-green">Freelance Coaching:</span> Developed a strategic approach to the digital marketplace.</li>
+                        </ul>
+                    </div>
                 </div>
-                <p class="card-subtitle">DEPI - Ministry of Communications and Information Technology</p>
-                <ul style="padding-left: 1.5rem; color: var(--text-grey);">
-                    <li><span class="highlight-green">Technical Proficiency:</span> Acquired hands-on expertise in incident response management.</li>
-                    <li><span class="highlight-green">English Development:</span> Completed a specialized 6-week "English for Freelancing" module, mastering professional terminology.</li>
-                    <li><span class="highlight-green">Freelance Coaching:</span> Developed a strategic approach to the digital marketplace.</li>
-                </ul>
             </div>
 
             <div class="content-card">
-                <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-                    <h3 class="card-title">Head of Cybersecurity Blue Team</h3>
-                    <span style="color: var(--primary-color);">Nov. 2025 — Present</span>
+                <div style="display: flex; align-items: start; gap: 20px;">
+                    <img src="hr_aufs.jpg" alt="HackerRank Community" style="width: 70px; height: 70px; border-radius: 10px; object-fit: cover; border: 1px solid var(--primary-color); flex-shrink: 0;">
+                    
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                            <h3 class="card-title" style="margin-bottom: 0;">Head of Cybersecurity Blue Team</h3>
+                            <span style="color: var(--primary-color);">Nov. 2025 — Present</span>
+                        </div>
+                        <p class="card-subtitle">HackerRank Campus Community</p>
+                        <ul style="padding-left: 1.5rem; color: var(--text-grey);">
+                            <li><span class="highlight-green">Team Leadership:</span> Lead and mentor a specialized team of students.</li>
+                            <li><span class="highlight-green">Community Engagement:</span> Organize internal Capture the Flag (CTF) challenges.</li>
+                            <li><span class="highlight-green">Technical Training:</span> Design and deliver technical workshops on Blue Team fundamentals.</li>
+                        </ul>
+                    </div>
                 </div>
-                <p class="card-subtitle">HackerRank Campus Community</p>
-                <ul style="padding-left: 1.5rem; color: var(--text-grey);">
-                    <li><span class="highlight-green">Team Leadership:</span> Lead and mentor a specialized team of students focused on defensive cybersecurity.</li>
-                    <li><span class="highlight-green">Community Engagement:</span> Organize internal Capture the Flag (CTF) challenges to enhance members.</li>
-                    <li><span class="highlight-green">Technical Training:</span> Design and deliver technical workshops on Blue Team fundamentals.</li>
-                </ul>
             </div>
         </section>
-
+        
         <section id="skills" class="hidden-section">
             <div class="section-header">
                 <div class="section-line"></div>
@@ -539,7 +565,6 @@
                     <span class="tag">Web attack forensics</span><br>
                     <span class="tag">Cyber Chef</span>
                 </div>
-                
                 <div class="content-card" style="margin-bottom: 0;">
                     <h3 class="card-title" style="color: #fff;">Systems & Operations</h3>
                     <span class="tag">Linux CLI</span><br>
@@ -668,8 +693,12 @@
     </main>
 
     <footer>
-        <p>SYSTEM HALTED. End of transmission.</p>
-        <p>&copy; 2026 Anas Abdelraouf</p>
+        <p style="margin-bottom: 0.5rem; color: #888;">Developed By Anas Abdelraouf</p>
+        
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <span class="footer-logo">&gt;_</span>
+            <span style="color: #666;"> 2026 Code Veronica</span>
+        </div>
     </footer>
 
     <script>
@@ -689,18 +718,32 @@
             });
         });
 
-        // Typing Effect
-        const text = "> Initializing secure connection... Establishing secure tunnel...";
-        const typingElement = document.getElementById('typing-text');
-        let index = 0;
+        // Typing Effect Script
+        // 1. Text to type for Name
+        const nameText = "./Anas_Abdelraouf";
+        const nameElement = document.getElementById('typing-name');
+        let nameIndex = 0;
 
-        function type() {
-            if (index < text.length) {
-                typingElement.innerHTML = text.substring(0, index + 1) + '<span style="animation: blink 1s infinite; color: #00ff41;">_</span>';
-                index++;
-                setTimeout(type, 50);
-            } else {
-                typingElement.innerHTML = text; 
+        // 2. Text to type for "Initializing..."
+        const initText = "> Initializing secure connection... Establishing secure tunnel...";
+        const initElement = document.getElementById('typing-text');
+        let initIndex = 0;
+
+        // Function for Name Typing
+        function typeName() {
+            if (nameIndex < nameText.length) {
+                nameElement.innerHTML += nameText.charAt(nameIndex);
+                nameIndex++;
+                setTimeout(typeName, 120); // Speed of Name Typing
+            }
+        }
+
+        // Function for Initializing Text Typing
+        function typeInit() {
+            if (initIndex < initText.length) {
+                initElement.innerHTML = initText.substring(0, initIndex + 1) + '<span style="animation: blink 1s infinite; color: #00ff41;">_</span>';
+                initIndex++;
+                setTimeout(typeInit, 40); // Speed of Init Text Typing
             }
         }
         
@@ -708,7 +751,11 @@
         style.innerHTML = `@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }`;
         document.head.appendChild(style);
 
-        window.onload = type;
+        // Start both effects on load
+        window.onload = function() {
+            typeName();
+            typeInit();
+        };
 
         // --- SCROLL ANIMATION OBSERVER ---
         const observer = new IntersectionObserver((entries) => {
@@ -762,5 +809,4 @@
         });
     </script>
 </body>
-
 </html>

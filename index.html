@@ -422,9 +422,66 @@
             margin-right: 8px; 
             text-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
         }
+        /* ========================================= */
+
+        /* --- LOADING SCREEN (BOOT SEQUENCE) --- */
+            body.is-loading { overflow: hidden; }
+
+            #boot-loader {
+                position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+                background-color: #000000; z-index: 9999;
+                display: flex; flex-direction: column; justify-content: center; align-items: center;
+                transition: opacity 0.5s ease, visibility 0.5s ease;
+            }
+
+            .loader-terminal {
+                width: 90%; max-width: 600px; color: var(--primary-color);
+                font-size: 1.1rem; line-height: 1.8; text-shadow: 0 0 5px var(--primary-color);
+            }
+
+            .hide-loader { opacity: 0; visibility: hidden; }
+
+        /* MOBILE RESPONSIVENESS (Media Queries)     */
+        /* ========================================= */
+        @media screen and (max-width: 768px) {
+            nav { flex-direction: column; padding: 15px; }
+            .nav-logo { font-size: 1.2rem; margin-bottom: 10px; }
+            nav ul { gap: 1rem; justify-content: center; }
+            nav a { font-size: 0.75rem; }
+            main { padding: 0 1rem; }
+            .hero-name-linux { font-size: 1.4rem; line-height: 1.5; }
+            .subtitle { font-size: 0.95rem; }
+            .hero-contact { flex-direction: column; gap: 1rem; align-items: center; }
+            section { padding: 2rem 1.2rem; margin-bottom: 5rem; }
+            .section-title { font-size: 1.4rem; }
+            .content-card { padding: 1.2rem; }
+            
+            /* Experience Cards fix for mobile */
+            .content-card > div[style*="align-items: start"] {
+                flex-direction: column; align-items: center !important; text-align: center;
+            }
+            .content-card img { margin-bottom: 15px; width: 80px !important; height: 80px !important; }
+            .content-card h3 { width: 100%; text-align: center; }
+            .content-card > div > div > div { flex-direction: column; align-items: center !important; }
+            .content-card > div > div > div span { margin-left: 0 !important; margin-top: 5px; margin-bottom: 10px; display: block; }
+            .content-card ul { text-align: left; }
+            .card-title { font-size: 1.1rem; }
+            .card-subtitle { font-size: 0.85rem; }
+        }
     </style>
 </head>
-<body>
+<body class="is-loading">
+
+    <body class="is-loading">
+
+    <div id="boot-loader">
+        <div class="loader-terminal">
+            <div id="boot-text"></div>
+            <span style="animation: blink 1s infinite; color: #00ff41;">_</span>
+        </div>
+    </div>
+    
+    <canvas id="matrix-bg"></canvas>
 
     <canvas id="matrix-bg"></canvas>
 
@@ -754,9 +811,39 @@
         document.head.appendChild(style);
 
         // Start both effects on load
+        // --- BOOT SEQUENCE LOGIC ---
+        const bootSequence = [
+            "Initializing secure connection...",
+            "Bypassing mainframe protocols...",
+            "Decrypting SOC Analyst T1 Databanks...",
+            "Loading interface components...",
+            "ACCESS GRANTED."
+        ];
+
+        const bootTextElement = document.getElementById('boot-text');
+        let bootIndex = 0;
+
+        function playBootSequence() {
+            if (bootIndex < bootSequence.length) {
+                bootTextElement.innerHTML += `> ${bootSequence[bootIndex]}<br>`;
+                bootIndex++;
+                let delay = Math.random() * 500 + 100;
+                if (bootIndex === bootSequence.length) delay = 800;
+                setTimeout(playBootSequence, delay);
+            } else {
+                setTimeout(() => {
+                    document.getElementById('boot-loader').classList.add('hide-loader');
+                    document.body.classList.remove('is-loading');
+                    setTimeout(() => {
+                        typeName(); // Starts your hero typing effect
+                        typeInit(); // Starts your hero typing effect
+                    }, 500);
+                }, 400);
+            }
+        }
+
         window.onload = function() {
-            typeName();
-            typeInit();
+            playBootSequence();
         };
 
         // --- SCROLL ANIMATION OBSERVER ---

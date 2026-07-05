@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MapPin, Mail, ArrowUpRight, Github, Linkedin, ShieldCheck } from "lucide-react";
 import { CONTACT, ROLES, METRICS } from "@/lib/portfolio-data";
 import { useSpotlight } from "@/hooks/use-spotlight";
-import profilePhoto from "@/assets/profile.jpg";
+import profilePhoto from "@/assets/profile.png";
 
 function useTypedRole() {
   const [text, setText] = useState("");

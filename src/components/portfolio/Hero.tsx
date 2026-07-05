@@ -104,13 +104,13 @@ export function Hero() {
               </div>
               <span className="label-mono text-muted-foreground">{CONTACT.name}</span>
             </div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-background/60">
+            <div className="relative aspect-square w-full overflow-hidden bg-background/60">
               <img
                 src={profilePhoto}
                 alt={`Portrait of ${CONTACT.name}`}
                 width={640}
                 height={640}
-                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(60% 60% at 50% 0%, oklch(0.66 0.145 245 / 0.18), transparent 70%)" }} />
